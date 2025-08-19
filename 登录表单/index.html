@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="用户登录表单页面" />
+    <meta name="keywords" content="登录,用户,表单" />
+    <title>登录表单</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- 页面头部 -->
+    <header class="title">
+      <h1>登录表单</h1>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="container">
+      <!-- 左侧装饰区域 -->
+      <section class="left" aria-hidden="true"></section>
+      
+      <!-- 右侧表单区域 -->
+      <section class="right">
+        <div class="form-box">
+          <!-- 登录表单 -->
+          <form action="/login" method="post" autocomplete="on" novalidate>
+            <!-- 用户名输入 -->
+            <div class="input-group">
+              <label for="username">用户名</label>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="请输入用户名"
+                required
+                maxlength="20"
+                autocomplete="username"
+              />
+            </div>
+            
+            <!-- 密码输入 -->
+            <div class="input-group">
+              <label for="password">密码</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="请输入密码"
+                required
+                minlength="6"
+                maxlength="20"
+                autocomplete="current-password"
+              />
+            </div>
+            
+            <!-- 记住我选项 -->
+            <div class="checkbox-group">
+              <input type="checkbox" id="remember" name="remember" value="1">
+              <label for="remember">记住我</label>
+            </div>
+            
+            <!-- 提交按钮 -->
+            <input type="submit" value="登录" class="submit-btn" />
+            
+            <!-- 或者使用按钮标签（更语义化） -->
+            <!-- <button type="submit" class="submit-btn">登录</button> -->
+          </form>
+          
+          <!-- 辅助链接 -->
+          <div class="form-links">
+            <a href="forgot-password.html">忘记密码？</a>
+            <a href="register.html">还没有账号？立即注册</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <!-- 页面底部 -->
+    <footer>
+      <p>&copy; 2025 登录系统. 保留所有权利.</p>
+    </footer>
+  </body>
+</html>
