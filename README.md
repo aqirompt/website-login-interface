@@ -39,4 +39,4 @@
 - 规范的代码结构：语义化HTML、模块化CSS
 - 细致的交互设计：从输入验证到按钮状态的全方位考虑
 
-有朋友无法访问或者下载的话可以访问Getee https://gitee.com/PyHaVolask/website-login-interface
+有朋友无法访问或者下载的话可以访问Gitee https://gitee.com/PyHaVolask/website-login-interface
