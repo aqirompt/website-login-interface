@@ -5,6 +5,7 @@
 
 ## 介绍
 本网站登陆实战代码 根据 [How to Create a Login Form with HTML](https://www.youtube.com/watch?v=spdmSB9zwQQ&list=PL5e68lK9hEzdYG6YQZCHtM9gon_cDNQMh&index=14)进行的进阶改造
+原视频对应的源代码地址 https://github.com/SCUTBrothers/Html-CSS-Tutorial-For-Beginners-Learning-Materials-of-Youtube-Video-
 
 ## 软件架构
 软件架构说明
