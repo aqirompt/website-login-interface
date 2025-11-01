@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 字符编码 -->
+    <meta charset="UTF-8">
+    <!-- IE兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 响应式视口设置 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO优化 - 网站描述 -->
+    <meta name="description" content="安全的用户登录系统">
+    <meta name="keywords" content="登录,用户中心,账户">
+    <!-- 网页标题 -->
+    <title>用户登录系统 - 半透明登录表单</title>
+    <!-- 引入样式表 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 页面主体容器 -->
+    <div class="container">
+        <!-- 登录表单区域 -->
+        <div class="login-box">
+            <!-- 用户头像 -->
+            <img src="assets/images/user.png" alt="用户头像" class="user">
+            
+            <!-- 标题 -->
+            <h2>用户登录</h2>
+            <p class="subtitle">欢迎回来,请登录您的账户</p>
+            
+            <!-- 表单 - 使用POST方式提交 -->
+            <form action="login/index.html" method="POST" id="loginForm">
+                
+                <!-- 邮箱输入框 -->
+                <div class="form-group">
+                    <label for="email">
+                        <strong>电子邮箱</strong>
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        placeholder="请输入邮箱地址 (例: user@example.com)" 
+                        required
+                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                        title="请输入有效的邮箱地址"
+                    >
+                </div>
+                
+                <!-- 密码输入框 -->
+                <div class="form-group">
+                    <label for="password">
+                        <strong>登录密码</strong>
+                    </label>
+                    <input 
+                        type="password" 
+                        id="password"
+                        name="password"
+                        placeholder="请输入密码 (6-20位字符)" 
+                        required
+                        minlength="6"
+                        maxlength="20"
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{6,}$"
+                        title="密码至少6位,必须包含字母和数字"
+                    >
+                </div>
+                
+                <!-- 记住我选项 -->
+                <div class="form-group checkbox-group">
+                    <input 
+                        type="checkbox" 
+                        id="remember" 
+                        name="remember"
+                        value="1"
+                    >
+                    <label for="remember">记住我的登录状态</label>
+                </div>
+                
+                <!-- 隐藏域 - 用于传递额外信息 -->
+                <input type="hidden" name="token" value="security_token_12345"><!--实际应用中使用后端生成 如: name="csrf_token" value="<?= generate_csrf_token() ?>-->
+                <input type="hidden" name="redirect" value="/dashboard">
+                
+                <!-- 提交和重置按钮 -->
+                <div class="button-group">
+                    <input type="submit" value="立即登录" class="btn-submit">
+                    <input type="reset" value="清空表单" class="btn-reset">
+                </div>
+                
+                <!-- 忘记密码链接 -->
+                <div class="links">
+                    <a href="login/forgot-password.html" class="forgot-password">忘记密码?</a>
+                    <span class="separator">|</span>
+                    <a href="login/register.html" class="register">注册新账户</a>
+                </div>
+            </form>
+            
+            <!-- 其他登录方式 
+            <div class="social-login">
+                <p class="divider">
+                    <span>或使用其他方式登录</span>
+                </p>
+                <div class="social-buttons">
+                    <button type="button" class="social-btn wechat" title="微信登录">微信</button>
+                    <button type="button" class="social-btn qq" title="QQ登录">QQ</button>
+                    <button type="button" class="social-btn weibo" title="微博登录">微博</button>
+                </div>
+            </div>
+        </div>-->
+        
+        <!-- 页面底部 -->
+        <footer class="page-footer">
+            <p>&copy; 2025 安全登录系统 版权所有</p>
+            <p class="footer-links">
+                <a href="copyright/terms.html">使用条款</a> &nbsp;|&nbsp; 
+                <a href="copyright/private.html">隐私政策</a> &nbsp;|&nbsp; 
+                <a href="copyright/help.html">帮助中心</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

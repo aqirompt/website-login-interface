@@ -1,0 +1,453 @@
+/* ================================
+   CSS变量定义 - 便于统一管理颜色
+   ================================ */
+   :root {
+    --primary-color: #e6c999;
+    --primary-dark: #d4b583;
+    --text-color: #333333;
+    --text-light: #666666;
+    --bg-overlay: rgba(232, 226, 219, 0.85);
+    --border-color: #e6c999;
+    --focus-color: #000000;
+    --white: #ffffff;
+    --error-color: #e74c3c;
+    --success-color: #27ae60;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ================================
+     全局样式重置
+     ================================ */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+    height: 100vh;
+    background: url("../assets/images/bg.jpg") center/cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* ================================
+     容器布局
+     ================================ */
+  .container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+  }
+  
+  /* ================================
+     登录框主体
+     ================================ */
+  .login-box {
+    position: relative;
+    width: 90%;
+    max-width: 420px;
+    background-color: var(--bg-overlay);
+    backdrop-filter: blur(10px);
+    padding: 100px 40px 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  /* 登录框淡入动画 */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ================================
+     用户头像
+     ================================ */
+  .login-box .user {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+    border-radius: 50%;
+    border: 5px solid var(--white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .login-box .user:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  /* ================================
+     标题样式
+     ================================ */
+  .login-box h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-color);
+  }
+  
+  .login-box .subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: var(--text-light);
+  }
+  
+  /* ================================
+     表单组样式
+     ================================ */
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-color);
+  }
+  
+  /* ================================
+     输入框样式
+     ================================ */
+  .login-box form input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: 15px;
+    padding: 10px 5px;
+    transition: all 0.3s ease;
+  }
+  
+  /* 文本和密码输入框 */
+  .login-box form input[type="email"],
+  .login-box form input[type="password"] {
+    border-bottom: 2px solid var(--border-color);
+    color: var(--text-color);
+  }
+  
+  /* 占位符样式 */
+  .login-box form input::placeholder {
+    color: var(--text-light);
+    font-size: 13px;
+  }
+  
+  /* 聚焦状态 */
+  .login-box form input[type="email"]:focus,
+  .login-box form input[type="password"]:focus {
+    border-bottom: 2px solid var(--focus-color);
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  
+  /* 输入框验证状态 */
+  .login-box form input:valid {
+    border-bottom-color: var(--success-color);
+  }
+  
+  .login-box form input:invalid:not(:placeholder-shown) {
+    border-bottom-color: var(--error-color);
+  }
+  
+  /* ================================
+     复选框样式
+     ================================ */
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+  }
+  
+  .checkbox-group label {
+    margin-bottom: 0;
+    font-weight: normal;
+    font-size: 13px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /* ================================
+     按钮组样式
+     ================================ */
+  .button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* 提交按钮 */
+  .btn-submit {
+    flex: 2;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    height: 45px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(230, 201, 153, 0.3);
+  }
+  
+  .btn-submit:hover {
+    background: linear-gradient(135deg, var(--focus-color), #333333);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn-submit:active {
+    transform: translateY(0);
+  }
+  
+  /* 重置按钮 */
+  .btn-reset {
+    flex: 1;
+    background-color: transparent;
+    height: 45px;
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-reset:hover {
+    background-color: var(--border-color);
+    transform: translateY(-2px);
+  }
+  
+  /* ================================
+     链接样式
+     ================================ */
+  .links {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 20px;
+  }
+  
+  .links a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .links a:hover {
+    color: var(--focus-color);
+    text-decoration: underline;
+  }
+  
+  .links .separator {
+    margin: 0 10px;
+    color: var(--text-light);
+  }
+  
+  /* ================================
+     社交登录区域
+     ================================ */
+  /*.social-login {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .divider {
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .divider span {
+    background-color: var(--bg-overlay);
+    padding: 0 15px;
+    color: var(--text-light);
+    font-size: 13px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }*.
+  
+  /* 社交按钮 */
+  /*.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .social-btn {
+    flex: 1;
+    max-width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+  }
+  
+  .social-btn.wechat {
+    background: linear-gradient(135deg, #09bb07, #07c160);
+  }
+  
+  .social-btn.qq {
+    background: linear-gradient(135deg, #12b7f5, #0e9fdf);
+  }
+  
+  .social-btn.weibo {
+    background: linear-gradient(135deg, #ff8200, #e66a00);
+  }
+  
+  .social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }*/
+  
+  /* ================================
+     页脚样式
+     ================================ */
+  .page-footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 12px;
+    color: rgba(128, 0, 128, 0.8);/*正紫色*/
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .page-footer p {
+    margin: 5px 0;
+  }
+  
+  .footer-links a {
+    color: rgba(128, 0, 128, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: var(--white);
+    text-decoration: underline;
+  }
+  
+  /* ================================
+     响应式设计 - 移动端适配
+     ================================ */
+  @media (max-width: 768px) {
+    .login-box {
+      padding: 80px 25px 30px;
+    }
+  
+    .login-box h2 {
+      font-size: 24px;
+    }
+  
+    .login-box .user {
+      width: 80px;
+      height: 80px;
+      top: -40px;
+      left: calc(50% - 40px);
+    }
+  
+    .button-group {
+      flex-direction: column;
+    }
+  
+    .btn-submit,
+    .btn-reset {
+      flex: 1;
+    }
+  
+    .social-buttons {
+      flex-direction: column;
+    }
+  
+    .social-btn {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .login-box {
+      padding: 70px 20px 25px;
+      border-radius: 10px;
+    }
+  
+    .login-box .user {
+      width: 70px;
+      height: 70px;
+      top: -35px;
+      left: calc(50% - 35px);
+    }
+  
+    .form-group {
+      margin-bottom: 20px;
+    }
+  
+    .login-box h2 {
+      font-size: 20px;
+    }
+  
+    .subtitle {
+      font-size: 12px;
+    }
+  }
+  
+  /* ================================
+     打印样式
+     ================================ */
+  @media print {
+    body {
+      background: white;
+    }
+  
+    .login-box {
+      box-shadow: none;
+      border: 1px solid #000;
+    }
+  
+    .social-login,
+    .page-footer {
+      display: none;
+    }
+  }
