@@ -1,5 +1,5 @@
 # website-login-interface
-**网站登陆界面**
+**网站登录界面**
 
 ## 软件架构
 软件架构说明
@@ -7,7 +7,7 @@
 
 ## 安装教程&使用说明
 
-下载或复制文件，可以选择直接用浏A览器打开html文件，或者使用小皮面板等其他软件搭建网站环境，打开apache之后访问本地IP就可以看到网站
+下载或复制文件，可以选择直接用浏览器打开html文件，或者使用小皮面板等其他软件搭建网站环境，打开apache之后访问本地IP就可以看到网站
 
 使用小皮面板打开apachi
 <img width="1568" height="500" alt="image" src="https://github.com/user-attachments/assets/93375dce-1de5-48ca-838b-54a2969257df" />
@@ -23,7 +23,6 @@
 
 如果使用浏览器直接打开，点击登陆后或跳转到C盘根目录
 <img width="409" height="196" alt="image" src="https://github.com/user-attachments/assets/0e95b716-0b9c-495e-9174-686c50d71894" />
-
 
 # 技术亮点总结
 这个登录界面项目的成功之处在于：
